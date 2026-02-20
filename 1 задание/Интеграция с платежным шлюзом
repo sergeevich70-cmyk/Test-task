@@ -1,5 +1,5 @@
 1. Тест-кейс: Успешная оплата заказа с валидной картой (без 3-D Secure)
-ID: TК_Integration with a payment gateway_01
+ID: TC_Integration with a payment gateway_01
 Название: Успешная оплата заказа с валидной картой (без 3-D Secure)
 Предусловия:
 
@@ -34,7 +34,7 @@ ID: TК_Integration with a payment gateway_01
 - На электронную почту пользователя, указанную в профиле, приходит письмо с чеком об оплате.
 
 2. Тест-кейс: Оплата отклонена банком-эмитентом
-ID: TК_Integration with a payment gateway_02
+ID: TC_Integration with a payment gateway_02
 Название: Оплата отклонена банком-эмитентом
 Предусловия:
 
@@ -63,7 +63,7 @@ ID: TК_Integration with a payment gateway_02
 - Письмо с чеком на email пользователя не отправляется.
 
 3. Тест-кейс: Ошибка на стороне платежного шлюза (5xx)
-ID: TК_Integration with a payment gateway_03
+ID: TC_Integration with a payment gateway_03
 Название: Ошибка на стороне платежного шлюза (5xx)
 Предусловия:
 
@@ -90,7 +90,7 @@ ID: TК_Integration with a payment gateway_03
 - Статус заказа не меняется на «Оплачен».
 
 4. Тест-кейс: Прохождение 3-D Secure (Успех)
-ID: TК_Integration with a payment gateway_04
+ID: TC_Integration with a payment gateway_04
 Название: Интеграция с 3-D Secure: успешная аутентификация
 Предусловия:
 
@@ -119,7 +119,7 @@ ID: TК_Integration with a payment gateway_04
 - Статус заказа меняется на «Оплачен».
 
 5. Тест-кейс: Прохождение 3-D Secure (Отмена)
-ID: TК_Integration with a payment gateway_05
+ID: TC_Integration with a payment gateway_05
 Название: Интеграция с 3-D Secure: неуспешная аутентификация (отмена пользователем)
 Предусловия:
 
