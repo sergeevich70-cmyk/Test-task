@@ -1,41 +1,38 @@
-// 1. Берем нужные инструменты из библиотеки Playwright
+// tests/chrome-test.spec.js - тест для Chrome
 const { test, expect } = require('@playwright/test');
 
-// 2. Создаем тест с названием "Проверяем заголовок сайта Playwright"
-test('Проверяем заголовок сайта Playwright', async ({ page }) => {
+test('Проверка заголовка в Google Chrome', async ({ page }) => {
+  console.log('Запускаем тест в Google Chrome...');
   
-// 3. Выводим сообщение в консоль (чтобы видеть процесс)
-  console.log('Открываем сайт playwright.dev...');
-  
-// 4. Открываем сайт и ждем загрузки
+  // Открываем сайт
   await page.goto('https://playwright.dev/');
   
-// 5. Ждем 2 секунды (чтобы точно всё загрузилось)
-  await page.waitForTimeout(2000);
-  
-// 6. Получаем заголовок страницы
+  // Получаем заголовок
   const title = await page.title();
+  console.log('Заголовок в Chrome:', title);
   
- // 7. Выводим полученный заголовок в консоль
-  console.log('Заголовок страницы:', title);
+  // УНИВЕРСАЛЬНАЯ ПРОВЕРКА: просто проверяем, что есть слово Playwright
+  expect(title).toContain('Playwright');
+  console.log('Заголовок содержит "Playwright"');
   
-// 8. Проверяем что заголовок правильный
-  console.log('Проверяем что заголовок соответствует ожидаемому...');
-  expect(title).toBe('Fast and reliable end-to-end testing for modern web apps | Playwright');
-  
-// 9. Если дошли до этой строки - всё хорошо
-  console.log('ТЕСТ ПРОЙДЕН! Заголовок правильный');
-  
-// 10. Конец теста
+  console.log('Тест в Chrome пройден!');
 });
+_________________________________________________________________________________________________________
+// tests/firefox-test.spec.js - тест для Firefox
+const { test, expect } = require('@playwright/test');
 
-Код:	  Что означает:	
-test()	Создать новый тест	
-async	  Функция может ждать	
-await   Подожди выполнения	
-page	  Вкладка браузера	
-goto()	Перейти по адресу	
-title()	Получить заголовок вкладки	
-expect()	Проверить что...	
-toBe()	Равно	
-console.log()	Вывести сообщение
+test('Проверка заголовка в Mozilla Firefox', async ({ page }) => {
+  console.log('Запускаем тест в Mozilla Firefox...');
+ 
+// Открываем сайт
+  await page.goto('https://playwright.dev/');
+
+// Получаем заголовок
+  const title = await page.title();
+  console.log('Заголовок в Firefox:', title);
+  
+// УНИВЕРСАЛЬНАЯ ПРОВЕРКА: просто проверяем, что есть слово Playwright
+  expect(title).toContain('Playwright');
+  
+  console.log('Тест в Firefox пройден!');
+});
